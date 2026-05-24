@@ -1,0 +1,9 @@
+{
+  "inlay_hints": {
+    "show_background": true,
+    "enabled": true
+  },
+  "prettier": {
+    "allowed": true
+  }
+}
