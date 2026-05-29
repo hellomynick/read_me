@@ -11,7 +11,7 @@
 <div class="min-h-screen flex flex-col">
 	<Header />
 
-	<main class="font-sans antialiased bg-background text-foreground">
+	<main class="font-sans antialiased bg-background text-foreground px-8">
 		{@render children()}
 	</main>
 </div>
