@@ -4,6 +4,7 @@
 	import type { NavLink } from '../constants/navigation.ts';
 	import { resolve } from '$app/paths';
 	import { ToggleGroup } from 'bits-ui';
+	import { Sun, Moon } from 'lucide-svelte';
 
 	const headerLinks: NavLink[] = [
 		{
@@ -32,12 +33,14 @@
 					{#if !link.isDisabled}
 						<a
 							class="text-sm text-muted-foreground hover:text-foreground transition-colors"
-							href={resolve(link.href)}>{link.name}</a
+							href={resolve(link.href)}
 						>
+							{link.name}
+						</a>
 					{/if}
 				{/each}
 			</div>
-			<div>
+			<div class="flex justify-center items-center gap-5">
 				<ToggleGroup.Root
 					bind:themes
 					type="single"
@@ -47,7 +50,16 @@
 						aria-label="toggle bold"
 						value="light"
 						class="rounded-9px bg-background-alt hover:bg-muted active:bg-dark-10 data-[state=on]:bg-muted data-[state=off]:text-foreground-alt data-[state=on]:text-foreground active:data-[state=on]:bg-dark-10 inline-flex size-10 items-center justify-center transition-all active:scale-[0.98]"
-					></ToggleGroup.Item>
+					>
+						<Sun />
+					</ToggleGroup.Item>
+					<ToggleGroup.Item
+						aria-label="toggle bold"
+						value="light"
+						class="rounded-9px bg-background-alt hover:bg-muted active:bg-dark-10 data-[state=on]:bg-muted data-[state=off]:text-foreground-alt data-[state=on]:text-foreground active:data-[state=on]:bg-dark-10 inline-flex size-10 items-center justify-center transition-all active:scale-[0.98]"
+					>
+						<Moon />
+					</ToggleGroup.Item>
 				</ToggleGroup.Root>
 				<div>Login</div>
 			</div>
